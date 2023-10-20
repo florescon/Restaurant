@@ -1,4 +1,4 @@
-<title>MidwayCafe</title>
+<title>Restaurant</title>
 <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/short.jpg') }}">
 <x-guest-layout>
 
@@ -24,31 +24,31 @@
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
+                <x-jet-label for="password" value="{{ __('Contraseña') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Recordarme') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Olvidó su contraseña?') }}
                     </a>
                 @endif
 
                 <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
+                    {{ __('Iniciar sesión') }}
                 </x-jet-button>
             </div><br>
             <div style="text-align:center">
                 Or, 
-                <u><a href="/register">Register Now</a></u>
+                <u><a href="/register">Registrarse ahora</a></u>
             </div>
         </form>
     </x-jet-authentication-card>

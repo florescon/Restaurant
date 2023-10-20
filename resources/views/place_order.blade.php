@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="SSLCommerz">
-    <title>MidwayCafe</title>
+    <title>Restaurant</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -31,7 +31,7 @@
 <body class="bg-light">
 <div class="container">
     <div class="py-5 text-center">
-        <h2>MidwayCafe</h2>
+        <h2>Restaurant</h2>
 
       
     </div>
@@ -39,62 +39,62 @@
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your cart</span>
+                <span class="text-muted">Carrito</span>
             </h4>
             <ul class="list-group mb-3">
                
                 <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (BDT)</span>
+                    <span>Total (MX)</span>
                     <strong>{{ $total }}</strong>
                 </li>
             </ul>
         </div>
         <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Shipping address</h4>
+            <h4 class="mb-3">Dirección de envío</h4>
             <form method="POST" action="{{url('confirm_place_order/'.$total)}}" class="needs-validation" novalidate>
                
             @csrf
 
                 <div class="mb-3">
-                    <label for="address">Address</label>
+                    <label for="address">Dirección</label>
                     <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St"
-                           value="93 B, New Eskaton Road" required>
+                           value="Centro" required>
                     <div class="invalid-feedback">
-                        Please enter your shipping address.
+                        Por favor ingrese su dirección
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                    <label for="address2">Dirección 2 <span class="text-muted">(Opcional)</span></label>
+                    <input type="text" class="form-control" id="address2" placeholder="Negocio u Hogar">
                 </div>
 
                 <div class="row">
                     <div class="col-md-5 mb-3">
-                        <label for="country">Country</label>
+                        <label for="country">País</label>
                         <select class="custom-select d-block w-100" id="country" required>
-                            <option value="">Choose...</option>
-                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="">Cambiar...</option>
+                            <option value="MX">México</option>
                         </select>
                         <div class="invalid-feedback">
-                            Please select a valid country.
+                            Seleccione una opción.
                         </div>
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label for="state">State</label>
+                        <label for="state">Estado</label>
                         <select class="custom-select d-block w-100" id="state" required>
-                            <option value="">Choose...</option>
-                            <option value="Dhaka">Dhaka</option>
+                            <option value="">Cambiar...</option>
+                            <option value="Jalisco">Jalisco</option>
                         </select>
                         <div class="invalid-feedback">
-                            Please provide a valid state.
+                            Proporcione un estado válido.
                         </div>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <label for="zip">Zip</label>
+                        <label for="zip">Código Postal</label>
                         <input type="text" class="form-control" id="zip" placeholder="" required>
                         <div class="invalid-feedback">
-                            Zip code required.
+                            C.P. Requerido
                         </div>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                 <hr class="mb-4">
                 <button class="btn btn-primary" 
                      
-                        endpoint="{{ url('/confirm_place_order') }}"> Confirm order
+                        endpoint="{{ url('/confirm_place_order') }}"> Confirmar Pedido
                 </button>
             </form>
         </div>

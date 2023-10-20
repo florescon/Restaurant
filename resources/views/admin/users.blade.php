@@ -6,15 +6,15 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Customer Details</h4>
+        <h4 class="card-title">Detalles del Cliente</h4>
         <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
                 <th> ID </th>
-                <th> Name </th>
+                <th> Nombre </th>
                 <th> Email </th>
-                <th> Phone</th>
+                <th> Teléfono</th>
               </tr>
             </thead>
             <tbody>

@@ -6,24 +6,24 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Reservation Details</h4>
+        <h4 class="card-title">Detalles de Reservaciones</h4>
         <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
               
 
-                <th> Date </th>
-                <th> Time </th>
-                <th> Name </th>
+                <th> Fecha </th>
+                <th> Tiempo </th>
+                <th> Nombre </th>
                 <th> Email </th>
-                <th> Phone</th>
+                <th> Teléfono</th>
             
-                <th> No of Guests </th>
+                <th> No. de Invitados </th>
   
       
                 
-                <th> Message </th>
+                <th> Mensaje </th>
               </tr>
             </thead>
             <tbody>

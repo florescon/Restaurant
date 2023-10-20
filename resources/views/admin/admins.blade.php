@@ -3,7 +3,7 @@
 @section('container')
 
 
-<a href="/admin-add" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Add Admin</a>
+<a href="/admin-add" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Agregar Admin</a>
 
 
 <br>
@@ -28,7 +28,7 @@
               
                     <div class="success">
                   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                  <strong>Congrats !</strong> {{Session::get('success')}}
+                  <strong>Listo !</strong> {{Session::get('success')}}
                 </div>
                     <br>
                     @endif
@@ -39,17 +39,17 @@
                           
            
                             <th> ID </th>
-                            <th> Name </th>
+                            <th> Nombre </th>
                             <th> Email </th>
-                            <th> Phone</th>
+                            <th> Teléfono</th>
                           
 
-                            <th>Type</th>
-                            <th>Salary</th>
+                            <th>Tipo</th>
+                            <th>Salario</th>
                         
 
 
-                            <th> Action </th>
+                            <th> Acción </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -104,8 +104,8 @@
 
                             <td>
 
-                            <a href="{{ asset('/admin/edit/'.$admin->id) }}" class="badge badge-outline-primary">Edit</a>
-                              <a href="{{ asset('/admin/delete/'.$admin->id) }}" class="badge badge-outline-danger" style="margin-left:10px;">Delete</a>
+                            <a href="{{ asset('/admin/edit/'.$admin->id) }}" class="badge badge-outline-primary">Editar</a>
+                              <a href="{{ asset('/admin/delete/'.$admin->id) }}" class="badge badge-outline-danger" style="margin-left:10px;">Eliminar</a>
                             </td>
                           </tr>
 

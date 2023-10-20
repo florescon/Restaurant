@@ -9,7 +9,7 @@
     <title>Admin Panel</title>
     @endif
     @if(Auth::user()->usertype == 2)
-    <title>User Panel</title>
+    <title>Panel de Usuario</title>
     @endif
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('admin/assets//vendors/mdi/css/materialdesignicons.min.css')}}">
@@ -61,7 +61,7 @@
                   <span>Sub Admin</span>
                   @endif
                   @if(Auth::user()->usertype == 2)
-                  <span>Delivery Boy</span>
+                  <span>Repartidor</span>
                   @endif
                 </div>
               </div>
@@ -73,7 +73,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Account settings</p>
+                    <p class="preview-subject ellipsis mb-1 text-small">Configuraciones de cuenta</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -84,7 +84,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Change Password</p>
+                    <p class="preview-subject ellipsis mb-1 text-small">Cambiar contraseña</p>
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -95,21 +95,21 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
+                    <p class="preview-subject ellipsis mb-1 text-small">Ir a la lista</p>
                   </div>
                 </a>
               </div>
             </div>
           </li>
           <li class="nav-item nav-category">
-            <span class="nav-link">Navigation</span>
+            <span class="nav-link">Navegación</span>
           </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="/redirects">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Inicio</span>
             </a>
           </li>
           @if(Auth::user()->usertype != 2)
@@ -118,7 +118,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-food"></i>
               </span>
-              <span class="menu-title">Food Menu</span>
+              <span class="menu-title">Menú</span>
             </a>
           </li>
           
@@ -138,16 +138,16 @@
               <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
-              <span class="menu-title">Orders</span>
+              <span class="menu-title">Pedidos</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/admin/orders-incomplete">Pending Orders</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/orders/process">Processing Order</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/orders-complete">Complete Orders</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/orders/cancel">Cancelled Order</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/order/location">Update Location</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/orders-incomplete">Pedidos Pendientes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/orders/process">Pedidos Procesadoss</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/orders-complete">Pedidos Completados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/orders/cancel">Pedidos Cancelados</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/order/location">Actualizar Ubicación</a></li>
 
               </ul>
             </div>
@@ -163,7 +163,7 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Add Menu</a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Agregar Menú</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Update Menu</a></li>
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Delete Menu</a></li>
               </ul>
@@ -176,7 +176,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-chart-bar"></i>
               </span>
-              <span class="menu-title">Reservation</span>
+              <span class="menu-title">Reservación</span>
             </a>
           </li>
           @if(Auth::user()->usertype == 1)
@@ -185,7 +185,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-settings"></i>
               </span>
-              <span class="menu-title">Customize Template</span>
+              <span class="menu-title">Personalizar</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -198,8 +198,8 @@
             </a>
             <div class="collapse" id="ui-basic2">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/admin/add/banner">Add Banners</a></li>
-                <li class="nav-item"> <a class="nav-link" href="/admin/banner/all">All Banners</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/add/banner">Agregar Banners</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/admin/banner/all">Todos los Banners</a></li>
               </ul>
             </div>
           </li>
@@ -220,7 +220,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-account-plus"></i>
               </span>
-              <span class="menu-title">Customer</span>
+              <span class="menu-title">Cliente</span>
             </a>
           </li>
 
@@ -232,7 +232,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-account-plus"></i>
               </span>
-              <span class="menu-title">Delivery Boy</span>
+              <span class="menu-title">Repartidor</span>
             </a>
           </li>
 
@@ -246,7 +246,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-account-card-details"></i>
               </span>
-              <span class="menu-title">Coupon</span>
+              <span class="menu-title">Cuṕon</span>
             </a>
           </li>
 
@@ -255,7 +255,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-bank"></i>
               </span>
-              <span class="menu-title">Charge</span>
+              <span class="menu-title">Impuestos</span>
             </a>
           </li>
 
@@ -277,14 +277,14 @@
             <ul class="navbar-nav w-100">
               <li class="nav-item w-100">
                 <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                  <input type="text" class="form-control" placeholder="Search products">
+                  <input type="text" class="form-control" placeholder="Buscar Productos">
                 </form>
               </li>
             </ul>
             <ul class="navbar-nav navbar-nav-right">
               <li class="nav-item dropdown d-none d-lg-block">
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
-                  <h6 class="p-3 mb-0">Projects</h6>
+                  <h6 class="p-3 mb-0">Proyectos</h6>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item preview-item">
                     <div class="preview-thumbnail">
@@ -293,7 +293,7 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Development</p>
+                      <p class="preview-subject ellipsis mb-1">Desarrollador</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -304,7 +304,7 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">UI Development</p>
+                      <p class="preview-subject ellipsis mb-1">UI Desarrollaodr</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -315,11 +315,11 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject ellipsis mb-1">Software Testing</p>
+                      <p class="preview-subject ellipsis mb-1">Testeo</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
-                  <p class="p-3 mb-0 text-center">See all projects</p>
+                  <p class="p-3 mb-0 text-center">Ver todos los proyectos</p>
                 </div>
               </li>
               <li class="nav-item nav-settings d-none d-lg-block">
@@ -351,7 +351,7 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
+                      <p class="preview-subject mb-1">Configuraciones</p>
                     </div>
                   </a>
                   <div class="dropdown-divider"></div>
@@ -364,7 +364,7 @@
                       </div>
                     </div>
                     <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Log out</p>
+                      <p class="preview-subject mb-1">Cerrar sesión</p>
                     </div>
                   </button>
                   </form>
@@ -387,9 +387,9 @@
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © RMS  2022</span>
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Restaurant {{ now()->year }}</span>
          
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="/" target="_blank">Go to Client Section</a></span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="/" target="_blank">Ir a la sección del cliente</a></span>
             </div>
           </footer>
           <!-- partial -->

@@ -74,14 +74,25 @@ class HomeController extends Controller
         if($usertype!='0')
     	{
 
-            $pending_order=DB::table('carts')->where('product_order','yes')->groupBy('invoice_no')->count();
+            $pending_order=DB::table('carts')->where('product_order','yes')->selectRaw("SUM(product_order) as total")
+            ->groupBy('invoice_no')
+            ->get();
 
-            $processing_order=DB::table('carts')->where('product_order','approve')->groupBy('invoice_no')->count();
+            $processing_order=DB::table('carts')->where('product_order','approve')->selectRaw("SUM(product_order) as total")
+            ->groupBy('invoice_no')
+            ->get();
 
-            $cancel_order=DB::table('carts')->where('product_order','cancel')->groupBy('invoice_no')->count();
+            $cancel_order=DB::table('carts')
+            ->where('product_order', 'cancel')
+            ->selectRaw("SUM(product_order) as total")
+            ->groupBy('invoice_no')
+            ->get();
 
-            $complete_order=DB::table('carts')->where('product_order','delivery')->groupBy('invoice_no')->count();
+            $complete_order=DB::table('carts')->where('product_order','delivery')->selectRaw("SUM(product_order) as total")
+            ->groupBy('invoice_no')
+            ->get();
 
+            // $complete_order=DB::table('carts')->where('product_order','delivery')->groupBy('invoice_no')->count();
 
             $total=DB::table('carts')->sum('subtotal');
 
@@ -221,7 +232,9 @@ class HomeController extends Controller
 
     public function reservation_confirm(Request $req)
     {
-
+        if(!Auth::user()){
+            return redirect()->route('login');
+        }
 
         $name=$req->name;
         $email=$req->email;
@@ -540,7 +553,7 @@ class HomeController extends Controller
         if($email > 0)
         {
 
-            session()->flash('wrong','Email already registered !');
+            session()->flash('wrong','Email ya registrado !');
             return back();
 
 
@@ -552,7 +565,7 @@ class HomeController extends Controller
         if($phone > 0)
         {
 
-            session()->flash('wrong','Phone already registered !');
+            session()->flash('wrong','Teléfono ya registrado !');
             return back();
 
 
@@ -560,7 +573,7 @@ class HomeController extends Controller
         if(strlen($req->password)<8)
         {
 
-            session()->flash('wrong','Password lenght at least 8 words!');
+            session()->flash('wrong','La contraseña debe tener al menos 8 palabras!');
             return back();
 
 
@@ -571,7 +584,7 @@ class HomeController extends Controller
         {
 
             
-            session()->flash('wrong','Password do not match !');
+            session()->flash('wrong','La contraseña no coincide !');
             return back();
 
 

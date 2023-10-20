@@ -15,7 +15,7 @@
             <span class="menu-icon">
               <i class="mdi mdi-speedometer"></i>
             </span>
-            <span class="menu-title">Users</span>
+            <span class="menu-title">Usuarios</span>
           </a>
         </li>
         <li class="nav-item menu-items">
@@ -23,7 +23,7 @@
             <span class="menu-icon">
               <i class="mdi mdi-playlist-play"></i>
             </span>
-            <span class="menu-title">Foods</span>
+            <span class="menu-title">Comidas</span>
           </a>
         </li>
         <li class="nav-item menu-items">
@@ -39,7 +39,7 @@
             <span class="menu-icon">
               <i class="mdi mdi-chart-bar"></i>
             </span>
-            <span class="menu-title">Charts</span>
+            <span class="menu-title">Gráficos</span>
           </a>
         </li>
         

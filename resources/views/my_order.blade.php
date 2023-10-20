@@ -9,7 +9,7 @@
     <center>
 
 
-    <h1>My order</h1>
+    <h1>Mi Pedido</h1>
 
     <br>
     <br>
@@ -19,12 +19,12 @@
 <table id="cart" class="table table-hover table-condensed container">
     <thead>
         <tr>
-            <th style="width:10%">Date</th>
-            <th style="width:10%">Invoice No.</th>
-            <th style="width:50%">Product</th>
-            <th style="width:20%">Payment Method</th>
-            <th style="text-align:center;width:10%">Price</th>
-            <th style="width:8%">Quantity</th>
+            <th style="width:10%">Fecha</th>
+            <th style="width:10%">Folio No.</th>
+            <th style="width:50%">Producto</th>
+            <th style="width:20%">Método de Pago</th>
+            <th style="text-align:center;width:10%">Precio</th>
+            <th style="width:8%">Cantidad</th>
             <th style="width:22%" class="text-center">Subtotal</th>
             
         </tr>
@@ -59,7 +59,7 @@
         </tr>
         <tr>
             <td colspan="7" class="text-right">
-                <a href="{{ url('/menu') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                <a href="{{ url('/menu') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar comprando</a>
               
             </td>
         </tr>

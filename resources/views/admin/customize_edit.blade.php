@@ -8,7 +8,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Edit Template</h4>
+                    <h4 class="card-title">Editar Plantilla</h4>
                     <br>
 
                     @if(Session::has('wrong'))
@@ -23,7 +23,7 @@
                   
                         <div class="success">
                       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                      <strong>Congrats !</strong> {{Session::get('success')}}
+                      <strong>Listo !</strong> {{Session::get('success')}}
                     </div>
                         <br>
                         @endif
@@ -33,11 +33,11 @@
                        @csrf
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Title</label>
+                        <label for="exampleInputName1">Título</label>
                         <input type="text" name="title" value="{{  $custo->title  }}" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Description</label>
+                        <label for="exampleInputName1">Descripción</label>
 
                         <textarea  cols="30" name="description" class="form-control" id="exampleInputName1" rows="5">{{  $custo->description  }}</textarea>
                     
@@ -45,18 +45,18 @@
 
 
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Section Image 1</label>
+                        <label for="exampleFormControlFile1">Sección Imagen 1</label>
                         <input type="file" name="image1" class="form-control-file" id="exampleFormControlFile1">
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Section Image 2</label>
+                        <label for="exampleFormControlFile1">Sección Imagen 2</label>
                         <input type="file" name="image2" class="form-control-file" id="exampleFormControlFile1">
                       </div>
 
 
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Section Image 3</label>
+                        <label for="exampleFormControlFile1">Sección Imagen 3</label>
                         <input type="file" name="image3" class="form-control-file" id="exampleFormControlFile1">
                       </div>
                       <div class="form-group">
@@ -72,8 +72,8 @@
                         <input type="file" name="image4" class="form-control-file" id="exampleFormControlFile1">
                       </div>
                     
-                      <button type="submit" class="btn btn-primary me-2">Update</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button type="submit" class="btn btn-primary me-2">Actualizar</button>
+                      <button class="btn btn-dark">Cancelar</button>
                     </form>
                   </div>
                 </div>

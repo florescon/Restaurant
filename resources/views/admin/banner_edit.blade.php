@@ -7,7 +7,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Edit Banner</h4>
+                    <h4 class="card-title">Editar Banner</h4>
                     
                     @if(Session::has('wrong'))
               
@@ -21,7 +21,7 @@
               
                     <div class="success">
                   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                  <strong>Congrats !</strong> {{Session::get('success')}}
+                  <strong>Listo !</strong> {{Session::get('success')}}
                 </div>
                     <br>
                     @endif
@@ -34,12 +34,12 @@
     
 
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Image</label>
+                        <label for="exampleFormControlFile1">Imagen</label>
                         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                   
                     
-                      <button type="submit" class="btn btn-primary me-2">Update</button>
+                      <button type="submit" class="btn btn-primary me-2">Actualizar</button>
 
                     </form>
                   </div>

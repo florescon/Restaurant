@@ -3,7 +3,7 @@
 @section('container')
 
 
-<a href="/add/delivery_boy" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Add Delivery boy</a>
+<a href="/add/delivery_boy" type="button" class="btn btn-success" style="width:270px;height:35px;padding-top:9px;">+ Agregar Repartidor</a>
 
 
 <br>
@@ -14,7 +14,7 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Delivery boy Details</h4>
+                    <h4 class="card-title">Detalles del Repartidor</h4>
                     
                     @if(Session::has('wrong'))
               
@@ -28,7 +28,7 @@
               
                     <div class="success">
                   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                  <strong>Congrats !</strong> {{Session::get('success')}}
+                  <strong>Listo !</strong> {{Session::get('success')}}
                 </div>
                     <br>
                     @endif
@@ -39,15 +39,15 @@
                           
            
                             <th> ID </th>
-                            <th> Name </th>
+                            <th> Nombre </th>
                             <th> Email </th>
-                            <th> Phone</th>
+                            <th> Teléfono</th>
 
-                            <th>Salary</th>
+                            <th>Salario</th>
                         
 
 
-                            <th> Action </th>
+                            <th> Acción </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -77,8 +77,8 @@
 
                             <td>
 
-                            <a href="{{ asset('/delivery_boy/edit/'.$delivery_boy->id) }}" class="badge badge-outline-primary">Edit</a>
-                              <a href="{{ asset('/delivery_boy/delete/'.$delivery_boy->id) }}" class="badge badge-outline-danger" style="margin-left:10px;">Delete</a>
+                            <a href="{{ asset('/delivery_boy/edit/'.$delivery_boy->id) }}" class="badge badge-outline-primary">Editar</a>
+                              <a href="{{ asset('/delivery_boy/delete/'.$delivery_boy->id) }}" class="badge badge-outline-danger" style="margin-left:10px;">Eliminar</a>
                             </td>
                           </tr>
 

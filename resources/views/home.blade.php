@@ -9,10 +9,10 @@
                 <div class="col-lg-4">
                     <div class="left-content">
                         <div class="inner-content">
-                            <h3>MidwayCafe</h3>
-                            <h4>THE BEST EXPERIENCE</h4>
+                            <h3>Restaurant</h3>
+                            <h4>LA MEJOR EXPERIENCIA</h4>
                             <div class="main-white-button scroll-to-section">
-                                <a href="#reservation"><h2>Make A Reservation</h2></a>
+                                <a href="#reservation"><h2>Hacer una Reservación</h2></a>
                             </div>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                     <div class="left-text-content">
                         <div class="section-heading">
                         @foreach($about_us as $a_us)
-                            <h6>About Us</h6>
+                            <h6>Acerca de nosotros</h6>
                             <h2>{{  $a_us->title  }}</h2>
                         </div>
                         <p>{{  $a_us->description  }}</p>
@@ -86,8 +86,8 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-4 text-center">
                     <div class="section-heading">
-                        <h6>Midway Week</h6>
-                        <h2>This Week’s Special Meal Offers</h2>
+                        <h6>Semana</h6>
+                        <h2>Ofertas de comidas especiales de esta semana</h2>
                     </div>
                 </div>
             </div>
@@ -100,9 +100,9 @@
                                     <div class="col-lg-6 offset-lg-3">
                                         <ul>
                                   
-                                          <li><a href='#tabs-1'><img src="{{ asset('assets/images/tab-icon-01.png')}}" alt="">Breakfast</a></li>
-                                          <li><a href='#tabs-2'><img src="{{ asset('assets/images/tab-icon-02.png')}}" alt="">Lunch</a></a></li>
-                                          <li><a href='#tabs-3'><img src="{{ asset('assets/images/tab-icon-03.png')}}" alt="">Dinner</a></a></li>
+                                          <li><a href='#tabs-1'><img src="{{ asset('assets/images/tab-icon-01.png')}}" alt="">Desayuno</a></li>
+                                          <li><a href='#tabs-2'><img src="{{ asset('assets/images/tab-icon-02.png')}}" alt="">Comida</a></a></li>
+                                          <li><a href='#tabs-3'><img src="{{ asset('assets/images/tab-icon-03.png')}}" alt="">Cena</a></a></li>
                                       
                                         </ul>
                                     </div>
@@ -569,7 +569,7 @@
                             </section>
                             <br>
                             <a href="/menu"><input style="color:#fff; background-color:#FB5849; font-size:20px;"
-                            class="btn" type="submit" value="Browse All"></a>
+                            class="btn" type="submit" value="Ver todo"></a>
                         </div>
                     </div>
                 </div>
@@ -583,8 +583,8 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="section-heading" >
-                        <h6>Our Menu</h6>
-                        <h2>Our selection of cakes with quality taste</h2>
+                        <h6>Nuestro Menu</h6>
+                        <h2>Nuestra selección de pan con sabor de calidad.</h2>
                     </div>
                 </div>
             </div>
@@ -604,7 +604,7 @@
 
                             <div class="price"><h6>${{ $product->price }}</h6>
                             @if($product->available!="Stock")
-                            <h4 style="">Out Of Stock</h4> 
+                            <h4 style="">Agotado</h4> 
 
                             @endif
                         
@@ -662,13 +662,13 @@
                                     <span class="rating_avg">({{  $per_rate}})</span>
             </span>
       <br>
-                                   <a href="/rate/{{ $product->id }}" style="color:blue;">Rate this</a>
-                                  <p>Quantity: </p>
+                                   <a href="/rate/{{ $product->id }}" style="color:blue;">Valoración</a>
+                                  <p>Cantidad: </p>
                                 @if($product->available=="Stock")
                                   <form method="post" action="{{route('cart.store',$product->id)}}">
                                      @csrf
                                   <input type="number" name="number" style="width:50px;" id="myNumber" value="1">
-                                    <input type="submit" class="btn btn-success" value="Add Chart">
+                                    <input type="submit" class="btn btn-success" value="Agregar">
                                   </form>
                                 @endif
 
@@ -676,7 +676,7 @@
                                   <form method="post" action="{{route('cart.store',$product->id)}}">
                                      @csrf
                                   <input type="number" name="number" style="width:50px;" id="myNumber" value="1">
-                                    <input type="submit" class="btn btn-success" disabled value="Add Chart">
+                                    <input type="submit" class="btn btn-success" disabled value="Agregar">
                                   </form>
                                 @endif
                                 </div>
@@ -700,8 +700,8 @@
             <div class="row">
                 <div class="col-lg-4 offset-lg-4 text-center">
                     <div class="section-heading">
-                        <h6>Our Chefs</h6>
-                        <h2>We offer the best ingredients for you</h2>
+                        <h6>Nuestros Chefs</h6>
+                        <h2>Ofrecemos los mejores ingredientes para ti.</h2>
                     </div>
                 </div>
             </div>
@@ -739,15 +739,15 @@
                 <div class="col-lg-6 align-self-center">
                     <div class="left-text-content">
                         <div class="section-heading">
-                            <h6>Contact Us</h6>
-                            <h2>Here You Can Make A Reservation Or Just walkin to our cafe</h2>
+                            <h6>Contáctanos</h6>
+                            <h2>Aquí puedes hacer una reserva o simplemente ir a nuestro Restaurante.</h2>
                         </div>
-                        <p>Members of Midway Dine are always active to response your call.</p>
+                        <p>Los miembros de Restaurant siempre están activos para responder a su llamada..</p>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="phone">
                                     <i class="fa fa-phone"></i>
-                                    <h4>Phone Numbers</h4>
+                                    <h4>Teléfonos</h4>
                                     <span><a href="#">01824072334</a>
 									<br><a href="#">01554649446</a>
 									</span>
@@ -757,8 +757,8 @@
                                 <div class="message">
                                     <i class="fa fa-envelope"></i>
                                     <h4>Emails</h4>
-                                    <span><a href="mailto:sajeebchakraborty.cse2000@gmail.com">sajeebchakraborty.cse2000@gmail.com</a><br>
-									<a href="mailto:sajeebcb.cseru@gmail.com">sajeebcb.cseru@gmail.com</a><br>
+                                    <span><a href="mailto:admin@gmail.com">admin@gmail.com</a><br>
+									<a href="mailto:admin2@gmail.com">admin2@gmail.com</a><br>
 									</span>
                                 </div>
                             </div>
@@ -771,27 +771,27 @@
                             @csrf
                           <div class="row">
                             <div class="col-lg-12">
-                                <h4>Table Reservation</h4>
+                                <h4>Reservación</h4>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                               <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
+                                <input name="name" type="text" id="name" placeholder="Nombre*" required="">
                               </fieldset>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                               <fieldset>
-                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
+                              <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email" required="">
                             </fieldset>
                             </div>
                             <div class="col-lg-6 col-sm-12">
                               <fieldset>
-                                <input name="phone" type="text" id="phone" placeholder="Phone Number*" required="">
+                                <input name="phone" type="text" id="phone" placeholder="Teléfono*" required="">
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
                                 <select value="number-guests" name="no_guest" id="number-guests">
-                                    <option value="number-guests">Number Of Guests</option>
+                                    <option value="number-guests">Número de Invitados</option>
                                     <option name="1" id="1">1</option>
                                     <option name="2" id="2">2</option>
                                     <option name="3" id="3">3</option>
@@ -820,21 +820,21 @@
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
                                 <select value="time" name="time" id="time">
-                                    <option value="time">Time</option>
-                                    <option name="Breakfast" id="Breakfast">Breakfast</option>
-                                    <option name="Lunch" id="Lunch">Lunch</option>
-                                    <option name="Dinner" id="Dinner">Dinner</option>
+                                    <option value="time">Hora</option>
+                                    <option name="Breakfast" id="Breakfast">Desayuno</option>
+                                    <option name="Lunch" id="Lunch">Comida</option>
+                                    <option name="Dinner" id="Dinner">Cena</option>
                                 </select>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                                <textarea name="message" rows="6" id="message" placeholder="Mensaje" required=""></textarea>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="submit" id="form-submit" class="main-button-icon">Make A Reservation</button>
+                                <button type="submit" id="form-submit" class="main-button-icon">Hacer Reservación</button>
                               </fieldset>
                             </div>
                           </div>

@@ -6,7 +6,7 @@
     <br>
     <br>
     <br>
-    <h1>Your Order have been Placed Successfully</h1><br>
+    <h1>Su pedido se ha realizado con éxito</h1><br>
     <div>
 </div>
 </div>

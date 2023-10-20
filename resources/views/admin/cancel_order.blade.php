@@ -6,23 +6,20 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title">Cancelled Order Details</h4>
+        <h4 class="card-title">Detalles de Pedidos Cancelados</h4>
         <div class="table-responsive">
           <table class="table">
             <thead>
               <tr>
               
 
-                <th> Date </th>
-                <th> Invoice No </th>
-                <th> Customer Name </th>
-                <th> Customer Phone</th>
-            
-                <th> Shippping Address </th>
-  
-      
-                <th> Payment Method </th>
-                <th> Action </th>
+                <th> Fecha </th>
+                <th> Folio No </th>
+                <th> Nombre del Cliente </th>
+                <th> Teléfono del Cliente</th>
+                <th> Dirección de Envío </th>
+                <th> Método de pago </th>
+                <th> Acción </th>
               </tr>
             </thead>
             <tbody>
@@ -58,7 +55,7 @@
 
                 <td>
 
-                <a href="{{ asset('/invoice/details/'.$order->invoice_no) }}" class="badge badge-outline-primary">Details</a>
+                <a href="{{ asset('/invoice/details/'.$order->invoice_no) }}" class="badge badge-outline-primary">Detalles</a>
                 </td>
               </tr>
 

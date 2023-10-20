@@ -6,7 +6,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Chef</h4>
+                    <h4 class="card-title">Agregar Chef</h4>
                     <br>
 
                     @if(Session::has('wrong'))
@@ -21,7 +21,7 @@
                   
                         <div class="success">
                       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                      <strong>Congrats !</strong> {{Session::get('success')}}
+                      <strong>Listo !</strong> {{Session::get('success')}}
                     </div>
                         <br>
                         @endif
@@ -31,11 +31,11 @@
                        @csrf
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
+                        <label for="exampleInputName1">Nombre</label>
                         <input type="text" name="name" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Job Title</label>
+                        <label for="exampleInputName1">Puesto</label>
                         <input type="text" name="job" class="form-control" id="exampleInputName1">
                       </div>
                      
@@ -54,13 +54,13 @@
                       </div>
                     
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Image</label>
+                        <label for="exampleFormControlFile1">Imagen</label>
                         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                   
                     
-                      <button type="submit" class="btn btn-primary me-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                      <a href="/admin/chefs" class="btn btn-dark">Cancelar</a>
                     </form>
                   </div>
                 </div>

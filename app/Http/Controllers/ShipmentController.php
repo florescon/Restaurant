@@ -339,7 +339,7 @@ class ShipmentController extends Controller
         if($carts==0)
         {
 
-            session()->flash('wrong','Invaild Invoice no !');
+            session()->flash('wrong','Folio invalido !');
             return back();
 
         }
@@ -347,7 +347,7 @@ class ShipmentController extends Controller
         if($req->phone!=Auth::user()->phone)
         {
 
-            session()->flash('wrong','Wrong phone no !');
+            session()->flash('wrong','Invalido telefono!');
             return back();
 
         }
@@ -422,7 +422,7 @@ class ShipmentController extends Controller
         if($coupon_code == 0)
         {
 
-            session()->flash('wrong','Wrong Coupon Code !');
+            session()->flash('wrong','Cupón Invalido !');
             return back();
 
         }
@@ -433,7 +433,7 @@ class ShipmentController extends Controller
         if($validate < $today)
         {
 
-            session()->flash('wrong','Expire Validation Date !');
+            session()->flash('wrong','Fecha de validación caducada !');
             return back();
 
 
@@ -457,7 +457,7 @@ class ShipmentController extends Controller
         else
         {
 
-            session()->flash('wrong','Already applied this code !');
+            session()->flash('wrong','Ya aplicado este código !');
             return back();
 
 

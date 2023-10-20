@@ -12,7 +12,7 @@
                       <div class="row">
                         <div class="col-9">
                           <div class="d-flex align-items-center align-self-start">
-                            <h3 class="mb-0">Amount : {{  $pending_order }}</h3>
+                            <h3 class="mb-0">Cantidad : {{  $pending_order->count() }}</h3>
                             <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                           </div>
                         </div>
@@ -22,7 +22,7 @@
                           </div>
                         </div>
                       </div>
-                      <h6 class="text-muted font-weight-normal">Pending Order</h6>
+                      <h6 class="text-muted font-weight-normal">Pedidos Pendientes</h6>
                     </div>
                   </div>
                 </div>
@@ -32,7 +32,7 @@
                       <div class="row">
                         <div class="col-9">
                           <div class="d-flex align-items-center align-self-start">
-                            <h3 class="mb-0">Amount : {{ $processing_order }}</h3>
+                            <h3 class="mb-0">Cantidad : {{ $processing_order->count() }}</h3>
                             <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                           </div>
                         </div>
@@ -42,7 +42,7 @@
                           </div>
                         </div>
                       </div>
-                      <h6 class="text-muted font-weight-normal">Processing Order</h6>
+                      <h6 class="text-muted font-weight-normal">Pedidos Procesados</h6>
                     </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
                       <div class="row">
                         <div class="col-9">
                           <div class="d-flex align-items-center align-self-start">
-                            <h3 class="mb-0">Amount : {{  $cancel_order }}</h3>
+                            <h3 class="mb-0">Cantidad : {{  $cancel_order->count() }}</h3>
                             <p class="text-danger ms-2 mb-0 font-weight-medium"></p>
                           </div>
                         </div>
@@ -62,7 +62,7 @@
                           </div>
                         </div>
                       </div>
-                      <h6 class="text-muted font-weight-normal">Cancel Order</h6>
+                      <h6 class="text-muted font-weight-normal">Pedidos Cancelados</h6>
                     </div>
                   </div>
                 </div>
@@ -72,7 +72,7 @@
                       <div class="row">
                         <div class="col-9">
                           <div class="d-flex align-items-center align-self-start">
-                            <h3 class="mb-0">Amount : {{    $complete_order }}</h3>
+                            <h3 class="mb-0">Cantidad : {{    $complete_order->count() }}</h3>
                             <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                           </div>
                         </div>
@@ -82,7 +82,7 @@
                           </div>
                         </div>
                       </div>
-                      <h6 class="text-muted font-weight-normal">Complete Order</h6>
+                      <h6 class="text-muted font-weight-normal">Pedidos Completados</h6>
                     </div>
                   </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="col-md-4 grid-margin stretch-card">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Transaction History</h4>
+                      <h4 class="card-title">Historial de Transacciones</h4>
 
 
                       <div id="chartContainer" style="height: 170px; width: 100%; background-color: transparent !important;"></div>
@@ -109,7 +109,7 @@
 
                       <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                         <div class="text-md-center text-xl-left">
-                          <h6 class="mb-1" >Cash on Delivery</h6>
+                          <h6 class="mb-1" >Dinero en Efectivo</h6>
                           <p class="text-muted mb-0"></p>
                         </div>
                         <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
@@ -120,7 +120,7 @@
 
                       <div class="bg-gray-dark d-flex d-md-block d-xl-flex flex-row py-3 px-4 px-md-3 px-xl-4 rounded mt-3">
                         <div class="text-md-center text-xl-left">
-                          <h6 class="mb-1">Online Payment</h6>
+                          <h6 class="mb-1">Pago en línea</h6>
                           <p class="text-muted mb-0"></p>
                         </div>
                         <div class="align-self-center flex-grow text-right text-md-center text-xl-right py-md-2 py-xl-0">
@@ -134,8 +134,8 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-row justify-content-between">
-                        <h4 class="card-title mb-1">Best Rating</h4>
-                        <p class="text-muted mb-1">Voters</p>
+                        <h4 class="card-title mb-1">Mejor puntuado</h4>
+                        <p class="text-muted mb-1">Votantes</p>
                       </div>
                       <div class="row">
                         <div class="col-12">
@@ -205,7 +205,7 @@
                               <div class="preview-item-content d-sm-flex flex-grow">
                                 <div class="flex-grow">
                                   <h6 class="preview-subject">{{  $product_get->name }}</h6>
-                                  <p class="text-muted mb-0">Rating : {{  $prod }}</p>
+                                  <p class="text-muted mb-0">Clasificación : {{  $prod }}</p>
                                 </div>
                                 <div class="me-auto text-sm-right pt-2 pt-sm-0">
                                   <p class="text-muted">{{  $voter }}</p>
@@ -228,7 +228,7 @@
                 <div class="col-sm-4 grid-margin">
                   <div class="card">
                     <div class="card-body">
-                      <h5>Total Customer</h5>
+                      <h5>Total de Clientes</h5>
                       <div class="row">
                         <div class="col-8 col-sm-12 col-xl-8 my-auto">
                           <div class="d-flex d-sm-block d-md-flex align-items-center">
@@ -247,7 +247,7 @@
                 <div class="col-sm-4 grid-margin">
                   <div class="card">
                     <div class="card-body">
-                      <h5>Total Delivery Boy</h5>
+                      <h5>Total de Repartidores</h5>
                       <div class="row">
                         <div class="col-8 col-sm-12 col-xl-8 my-auto">
                           <div class="d-flex d-sm-block d-md-flex align-items-center">
@@ -266,7 +266,7 @@
                 <div class="col-sm-4 grid-margin">
                   <div class="card">
                     <div class="card-body">
-                      <h5>Total Admin</h5>
+                      <h5>Total de Administradores</h5>
                       <div class="row">
                         <div class="col-8 col-sm-12 col-xl-8 my-auto">
                           <div class="d-flex d-sm-block d-md-flex align-items-center">
@@ -287,16 +287,16 @@
                 <div class="col-12 grid-margin">
                   <div class="card">
                     <div class="card-body">
-                      <h4 class="card-title">Top Seller</h4>
+                      <h4 class="card-title">Top Ventas</h4>
                       <div class="table-responsive">
                         <table class="table">
                           <thead>
                             <tr>
                              
-                              <th style="text-align:center;"> Product ID </th>
-                              <th style="text-align:center;"> Product Name </th>
-                              <th  style="text-align:center;"> Price </th>
-                              <th   style="text-align:center;"> Quantity </th>
+                              <th style="text-align:center;"> ID Producto </th>
+                              <th style="text-align:center;">Nombre de Producto </th>
+                              <th  style="text-align:center;"> Precio </th>
+                              <th   style="text-align:center;"> Cantidad </th>
                           
                             </tr>
                           </thead>
@@ -390,8 +390,8 @@
   		// Change type to "bar", "area", "spline", "pie",etc.
   		type: "column",
   		dataPoints: [
-  			{ label: "Cash on Delivery",  y: +cash_pay_value  },
-  			{ label: "Online Payment", y: +online_pay_value  },
+  			{ label: "Pago en efectivo",  y: +cash_pay_value  },
+  			{ label: "Pago en linea", y: +online_pay_value  },
   		
   		]
   	}

@@ -3,14 +3,14 @@
 @section('container')
 
 
-<a href="/customize/edit" type="button" class="btn btn-primary">Edit Template</a>
+<a href="/customize/edit" type="button" class="btn btn-primary">Editar Plantilla</a>
 <br><br>
 
 @foreach($customize as $customize_theme)
 <div class="card">
-  <h5 class="card-header">Title : {{ $customize_theme->title }}</h5>
+  <h5 class="card-header">Título : {{ $customize_theme->title }}</h5>
   <div class="card-body">
-    <p class="card-text"><b>Description : </b> {{ $customize_theme->description }}</p>
+    <p class="card-text"><b>Descripción : </b> {{ $customize_theme->description }}</p>
     <br>
   </div>
 </div>
@@ -22,7 +22,7 @@
   <div class="card">
     <img src="{{ asset('assets/images/'.$customize_theme->image1) }}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Section 1 Image</h5>
+      <h5 class="card-title">Sección 1 Imagen</h5>
       <p class="card-text">
 
         
@@ -36,7 +36,7 @@
   <div class="card" style="margin-left:20px;">
     <img src="{{ asset('assets/images/'.$customize_theme->image2) }}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Section 2 Image</h5>
+      <h5 class="card-title">Sección 2 Imagen</h5>
 
     <p class="card-text">
 
@@ -51,7 +51,7 @@
   <div class="card"  style="margin-left:20px;">
     <img src="{{ asset('assets/images/'.$customize_theme->image3) }}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Section 3 Image</h5>
+      <h5 class="card-title">Sección 3 Imagen</h5>
 
     <p class="card-text">
 

@@ -1,7 +1,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
-    <title>Successful Payment</title>
+    <title>Pago Confirmado</title>
 </head>
     <style>
       body {
@@ -48,9 +48,13 @@
      $invoice=Session::get('invoice');
 
 ?>
-        <h1>Success</h1> 
-        <h3>Invoice no - {{  $invoice }}</h3>
-        <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+        <h1>Confirmado</h1> 
+        <h3>Folio no - {{  $invoice }}</h3>
+        <p>Recibimos tu pago!</p>
+
+        <br>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="/">Ir a la sección del cliente</a></span>
+
       </div>
     </body>
 </html>

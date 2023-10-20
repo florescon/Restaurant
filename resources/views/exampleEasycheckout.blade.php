@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="SSLCommerz">
-    <title>MidwayCafe</title>
+    <title>Restaurant</title>
 
 
 
@@ -33,7 +33,7 @@
 <body class="bg-light">
 <div class="container">
     <div class="py-5 text-center">
-        <h2>MidwayCafe</h2>
+        <h2>Restaurant</h2>
 
       
     </div>
@@ -41,12 +41,12 @@
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your cart</span>
+                <span class="text-muted">Tu carrito</span>
             </h4>
             <ul class="list-group mb-3">
                
                 <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (BDT)</span>
+                    <span>Total (MX)</span>
                     <strong>{{ $total }}</strong>
                 </li>
             </ul>

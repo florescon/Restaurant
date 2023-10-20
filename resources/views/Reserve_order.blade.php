@@ -1,7 +1,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
-    <title>Successful Reservation</title>
+    <title>Reservación Confirmada</title>
 </head>
     <style>
       body {
@@ -43,7 +43,11 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
-        <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+        <p>Recibimos tu reservación!</p>
+
+        <br>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="/">Ir a la sección del cliente</a></span>
+
       </div>
     </body>
 </html>

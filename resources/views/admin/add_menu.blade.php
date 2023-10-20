@@ -6,7 +6,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Menu</h4>
+                    <h4 class="card-title">Agregar Menu</h4>
                     <br>
                     @if(Session::has('wrong'))
               
@@ -20,7 +20,7 @@
                  
                       <div class="success">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                    <strong>Congrats !</strong> {{Session::get('success')}}
+                    <strong>Listo !</strong> {{Session::get('success')}}
                   </div>
                       <br>
                       @endif
@@ -30,50 +30,50 @@
                        @csrf
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
+                        <label for="exampleInputName1">Nombre</label>
                         <input type="text" name="name" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleTextarea1">Description</label>
+                        <label for="exampleTextarea1">Descripción</label>
                         <textarea class="form-control" name="description" id="exampleTextarea1" rows="5"></textarea>
                       </div>
                     
                       <div class="form-group">
-                        <label for="exampleInputPassword4">Price</label>
+                        <label for="exampleInputPassword4">Precio</label>
                         <input type="number" name="price" class="form-control" id="exampleInputPassword4">
                       </div>
                       <div class="form-group">
-                        <label for="exampleSelectGender">Catagory</label>
+                        <label for="exampleSelectGender">Categoría</label>
                         <select class="form-control" name="catagory" id="exampleSelectGender">
                           <option value="regular">Regular</option>
-                          <option value="special">Special</option>
+                          <option value="special">Especial</option>
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleSelectGender">Season</label>
+                        <label for="exampleSelectGender">Estación</label>
                         <select class="form-control" name="session" id="exampleSelectGender">
-                          <option value="0">Breakfast</option>
-                          <option value="1">Lunch</option>
-                          <option value="2">Dinner</option>
+                          <option value="0">Desayno</option>
+                          <option value="1">Comida</option>
+                          <option value="2">Cena</option>
                         </select>
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleSelectGender">Available</label>
+                        <label for="exampleSelectGender">Disponibilidad</label>
                         <select class="form-control" name="available" id="exampleSelectGender">
-                          <option>Stock</option>
-                          <option>Out of Stock</option>
+                          <option>Existencia</option>
+                          <option>Agotado</option>
 
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Image</label>
+                        <label for="exampleFormControlFile1">Imagen</label>
                         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                   
                     
-                      <button type="submit" class="btn btn-primary me-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                      <button class="btn btn-dark">Cancelar</button>
                     </form>
                   </div>
                 </div>

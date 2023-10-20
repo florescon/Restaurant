@@ -16,7 +16,7 @@
 
     <div class="success">
   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-  <strong>Congrats !</strong> {{Session::get('success')}}
+  <strong>Listo !</strong> {{Session::get('success')}}
 </div>
     <br>
     @endif
@@ -24,9 +24,9 @@
 
 @foreach($products as $product)
 <div class="card">
-  <h5 class="card-header">Customer Details</h5>
+  <h5 class="card-header">Detalles del Cliente</h5>
   <div class="card-body">
-    <h5 class="card-text">Invoice No : {{  $product->invoice_no }}</h5>
+    <h5 class="card-text">Folio No : {{  $product->invoice_no }}</h5>
     <br>
     <?php
 
@@ -34,11 +34,11 @@
         $user=DB::table('users')->where('id',$product->user_id)->first();
 
     ?>
-    <p class="card-text">Customer Name : {{ $user->name }}</p>
-    <p class="card-text">Customer Phone : {{ $user->phone }}</p>
-    <p class="card-text">Customer Email : {{ $user->email }}</p>
-    <p class="card-text">Shipping Address : {{ $product->shipping_address }}</p>
-    <a href="/customer" class="btn btn-primary"><b>Details</a>
+    <p class="card-text">Nombre del Cliente : {{ $user->name }}</p>
+    <p class="card-text">Teléfono del Cliente : {{ $user->phone }}</p>
+    <p class="card-text">Correo del Cliente : {{ $user->email }}</p>
+    <p class="card-text">Dirección de Envío : {{ $product->shipping_address }}</p>
+    <a href="/customer" class="btn btn-primary"><b>Detalles</a>
   </div>
 </div>
 
@@ -59,16 +59,16 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Product Details</h4>
+                    <h4 class="card-title">Detalles del Producto</h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
                           <tr>
                           
            
-                            <th> Product Name </th>
-                            <th> Price </th>
-                            <th> Quantity </th>
+                            <th> Nombre del producto </th>
+                            <th> Precio </th>
+                            <th> Cantidad </th>
                             <th> Subtotal </th>
                           
                           </tr>
@@ -126,7 +126,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td>Discount </td>
+                            <td>Descuento </td>
                             <td class="">  ${{  $discount_price }}</td>                   
                     
                     
@@ -135,7 +135,7 @@
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><h3>Total (With Discount)</h3> </td>
+                            <td><h3>Total (Con Descuento)</h3> </td>
                             <td class=""><h3>  ${{  $total_price }} </h3></td>                   
                     
                     
@@ -153,7 +153,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Update Order Location</h4>
+                    <h4 class="card-title">Actualizar ubicación del pedido</h4>
                   
                     
           
@@ -163,20 +163,20 @@
                        @csrf
 
                        <div class="form-group">
-                        <label for="exampleInputName1">Previous Delivery Time</label>
+                        <label for="exampleInputName1">Tiempo de entrega anterior</label>
                         <input type="text" style="background-color:black !important;" name="" value="{{ $product->delivery_time }}" class="form-control" id="exampleInputName1" readonly>
 
                       </div>
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Delivery Time (Now)</label>
+                        <label for="exampleInputName1">Tiempo de entrega (Ahora)</label>
                         <input type="datetime-local" name="time" value="{{ $product->delivery_time }}" class="form-control" id="exampleInputName1">
 
                       </div>
                  
                     
-                      <button type="submit" class="btn btn-primary me-2">Update Order</button>
-                      <a href="{{  asset('/invoice/cancel-order/'.$product->invoice_no) }}" class="btn btn-danger">Cancel Order</a>
+                      <button type="submit" class="btn btn-primary me-2">Actualizar Pedido</button>
+                      <a href="{{  asset('/invoice/cancel-order/'.$product->invoice_no) }}" class="btn btn-danger">Cancelar Pedido</a>
                     </form>
 
                     @break;

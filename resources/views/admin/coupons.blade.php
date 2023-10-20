@@ -3,7 +3,7 @@
 @section('container')
 
 
-<a href="/add/coupon" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Add Coupon</a>
+<a href="/add/coupon" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Agregar Cupón</a>
 
 
 <br>
@@ -14,7 +14,7 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Coupon Details</h4>
+                    <h4 class="card-title">Detalles del Cupón</h4>
 
                     @if(Session::has('wrong'))
               
@@ -28,7 +28,7 @@
               
                     <div class="success">
                   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                  <strong>Congrats !</strong> {{Session::get('success')}}
+                  <strong>Listo !</strong> {{Session::get('success')}}
                 </div>
                     <br>
                     @endif
@@ -39,14 +39,14 @@
                           
            
                             <th> ID </th>
-                            <th> Name </th>
-                            <th> Details </th>
-                            <th>Code</th>
-                            <th> Discount Percentage</th>
+                            <th> Nombre </th>
+                            <th> Detalles </th>
+                            <th>Código</th>
+                            <th> Porcentaje de Descuento</th>
                         
-                            <th> Validation Date </th>
+                            <th> Fecha de validación </th>
 
-                            <th> Action </th>
+                            <th> Acción </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -76,8 +76,8 @@
 
                             <td>
 
-                            <a href="{{ asset('/admin/coupon/edit/'.$coupon->id) }}" class="badge badge-outline-primary">Edit</a>
-                              <a href="{{ asset('/admin/coupon/delete/'.$coupon->id) }}" class="badge badge-outline-danger" style="margin-left:10px;">Delete</a>
+                            <a href="{{ asset('/admin/coupon/edit/'.$coupon->id) }}" class="badge badge-outline-primary">Editar</a>
+                              <a href="{{ asset('/admin/coupon/delete/'.$coupon->id) }}" class="badge badge-outline-danger" style="margin-left:10px;">Eliminar</a>
                             </td>
                           </tr>
 

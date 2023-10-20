@@ -86,7 +86,7 @@ class AdminController extends Controller
     {
        // dd($orders);
 
-       $orders=DB::table('carts')->where('product_order','yes')
+       $orders=DB::table('carts')->where('product_order','yes')->orderBy('id', 'desc')
        ->groupBy('invoice_no')
        ->paginate(10);
 
@@ -175,9 +175,7 @@ class AdminController extends Controller
     public function banner_add()
     {
 
-
         return view('admin.add_banner');
-
     }
 
     public function menu_add_process(Request $req)
@@ -186,16 +184,13 @@ class AdminController extends Controller
 
         if($req->price < 0)
         {
-
-            session()->flash('wrong','Negative Price value do not accept !');
+            session()->flash('wrong','Valor de precio negativo no se acepta!');
             return back();
-
-
         }
 
 
         $this->validate(request(),[
-
+            'name' => 'required',
             'image'=>'mimes:jpeg,jpg,png',
         ]);
      
@@ -217,7 +212,7 @@ class AdminController extends Controller
         $insert=DB::table('products')->Insert($data);
 
 
-        session()->flash('success','Menu added successfully !');
+        session()->flash('success','Menu agregado !');
         return back();
 
 
@@ -225,14 +220,11 @@ class AdminController extends Controller
     }
     public function chef_add_process(Request $req)
     {
-
-
-     
         $this->validate(request(),[
-
+            'name' => 'required',
+            'job_title' => 'required',
             'image'=>'mimes:jpeg,jpg,png',
         ]);
-     
      
         $uploadedfile=$req->file('image');
         $new_image=rand().'.'.$uploadedfile->getClientOriginalExtension();
@@ -249,25 +241,16 @@ class AdminController extends Controller
 
         $insert=DB::table('chefs')->Insert($data);
 
-
-        session()->flash('success','Chef added successfully !');
+        session()->flash('success','Chef agregado !');
         return back();
-
-
-        
     }
+
     public function menu_delete_process($id)
     {
-
-
-
         $delete=DB::table('products')->where('id',$id)->delete();
 
-        session()->flash('success','Menu  deleted successfully !');
+        session()->flash('success','Menu eliminado !');
         return back();
-
-
-
     }
 
     public function chef_delete_process($id)
@@ -275,7 +258,7 @@ class AdminController extends Controller
 
         $delete=DB::table('chefs')->where('id',$id)->delete();
 
-        session()->flash('success','Chef  deleted successfully !');
+        session()->flash('success','Chef eliminado !');
         return back();
 
     }
@@ -313,7 +296,7 @@ class AdminController extends Controller
         if($req->price < 0)
         {
 
-            session()->flash('wrong','Negative Price value do not accept !');
+            session()->flash('wrong','Valor de precio negativo no se acepta !');
             return back();
 
         }
@@ -330,7 +313,6 @@ class AdminController extends Controller
         {
 
             $this->validate(request(),[
-
                 'image'=>'mimes:jpeg,jpg,png',
             ]);
          
@@ -348,7 +330,7 @@ class AdminController extends Controller
         $update=DB::table('products')->where('id',$id)->Update($data);
 
 
-        session()->flash('success','Menu updated successfully !');
+        session()->flash('success','Menu actualizado!');
         return back();
 
     }
@@ -386,13 +368,12 @@ class AdminController extends Controller
         $update=DB::table('chefs')->where('id',$id)->Update($data);
 
 
-        session()->flash('success','Chef upadetd successfully !');
+        session()->flash('success','Chef actualizado!');
         return back();
     }
 
     public function invoice_approve(Request $req,$id)
     {
-
         $data=array();
 
         $data['product_order']="approve";
@@ -416,12 +397,8 @@ class AdminController extends Controller
 
         foreach($products as $product)
         {
-
-
             $user_id=$product->user_id;
             $status=$product->product_order;
-
-
         }
         
         if($status!="approve")
@@ -430,23 +407,19 @@ class AdminController extends Controller
                 'title' => 'Mail from RMS Admin',
                 'body' => 'Your order Invoice no - '.$id.' Delivery Time (approximately) - '.$req->time,
             ];
-
             
             $user=DB::table('users')->where('id',$user_id)->first();
         
             \Mail::to($user->email)->send(new \App\Mail\ApproveMail($details));
 
-
             $update=DB::table('carts')->where('invoice_no',$id)->Update($data);
 
-
-            session()->flash('success','Order approved successfully !');
+            session()->flash('success','Pedido Aprobado !');
             return back();
 
         }
         else
         {
-
             $details = [
                 'title' => 'Mail from RMS Admin',
                 'body' => 'Your order approved by RMS.Your order Invoice no - '.$id.' & Delivery Remaining Time (approximately) - '.$req->time,
@@ -457,13 +430,10 @@ class AdminController extends Controller
         
             \Mail::to($user->email)->send(new \App\Mail\ApproveMail($details));
 
-
             $update=DB::table('carts')->where('invoice_no',$id)->Update($data);
 
-
-            session()->flash('success','Order loaction updated successfully !');
+            session()->flash('success','Ubicación del pedido actualizada correctamente!');
             return redirect('/order/location');
-
         }
 
     }
@@ -553,14 +523,14 @@ class AdminController extends Controller
 
         if($status!="approve")
         {
-            session()->flash('success','Order cancelled successfully !');
+            session()->flash('success','Pedido cancelado !');
             return back();
 
         }
         else
         {
 
-            session()->flash('success','Order cancelled successfully !');
+            session()->flash('success','Pedido cancelado !');
 
             return redirect('/order/location');
 
@@ -585,7 +555,7 @@ class AdminController extends Controller
         {
 
 
-            session()->flash('wrong','Invalid Invoice no !');
+            session()->flash('wrong','Invalido Folio !');
             return back();
     
 
@@ -606,7 +576,7 @@ class AdminController extends Controller
        }
        if($status!="approve")
        {
-           session()->flash('wrong','Order not approved !');
+           session()->flash('wrong','Pedido no Aprobado !');
            return back();
 
        }
@@ -692,7 +662,7 @@ class AdminController extends Controller
 
             $update=DB::table('carts')->where('invoice_no',$id)->Update($data);
 
-            session()->flash('success','Order delivered successfully !');
+            session()->flash('success','Pedido entregado con éxito !');
             return back();
 
     }
@@ -722,7 +692,7 @@ class AdminController extends Controller
         if($salary < 0)
         {
 
-            session()->flash('wrong','Negative Salary do no accepted !');
+            session()->flash('wrong','No se aceptan salarios negativos !');
             return back();
 
 
@@ -736,7 +706,7 @@ class AdminController extends Controller
         if($email > 0)
         {
 
-            session()->flash('wrong','Email already registered !');
+            session()->flash('wrong','Email ya registrado !');
             return back();
 
 
@@ -747,29 +717,24 @@ class AdminController extends Controller
 
         if($phone > 0)
         {
-            session()->flash('wrong','Phone already registered !');
+            session()->flash('wrong','Teléfono ya registrado !');
             return back();
 
         }
         if(strlen($req->password)<8)
         {
-
-            session()->flash('wrong','Password lenght at least 8 words!');
+            session()->flash('wrong','La contraseña debe tener al menos 8 palabras!');
             return back();
-
         }
 
         if($req->password!=$req->confirm_password)
         {
-
-            session()->flash('wrong','Password do not match !');
+            session()->flash('wrong','La contraseña no coincide !');
             return back();
-
-
         }
 
         $this->validate(request(),[
-
+            'name' => 'required',
             'image'=>'mimes:jpeg,jpg,png',
         ]);
      
@@ -811,7 +776,7 @@ class AdminController extends Controller
 
         \Mail::to($req->email)->send(new \App\Mail\UserAddedMail($details));
 
-        session()->flash('success','Admin added successfully !');
+        session()->flash('success','Admin agregado !');
         return back();
 
     }
@@ -842,7 +807,7 @@ class AdminController extends Controller
             return redirect::to('/login');
         }
 
-        session()->flash('success','Admin deleted successfully !');
+        session()->flash('success','Admin eliminado !');
         return back();
     }
     
@@ -865,7 +830,7 @@ class AdminController extends Controller
         if($req->salary < 0)
         {
 
-            session()->flash('wrong','Negative Salary do no accepted !');
+            session()->flash('wrong','No se aceptan salarios negativos !');
             return back();
         }
 
@@ -874,7 +839,7 @@ class AdminController extends Controller
         if($email > 0)
         {
 
-            session()->flash('wrong','Email already registered !');
+            session()->flash('wrong','Email ya registrado !');
             return back();
 
 
@@ -886,7 +851,7 @@ class AdminController extends Controller
         if($phone > 0)
         {
 
-            session()->flash('wrong','Phone already registered !');
+            session()->flash('wrong','Teléfono ya registrado !');
             return back();
 
 
@@ -972,14 +937,14 @@ class AdminController extends Controller
             \Mail::to($req->email)->send(new \App\Mail\UserAddedMail($details));
     
     
-            session()->flash('success','Admin updated successfully !');
+            session()->flash('success','Admin actualizado!');
 
 
         }
         else
         {
 
-            session()->flash('wrong','Already same info exits !');
+            session()->flash('wrong','Ya sale la misma información !');
 
         }
 
@@ -1005,7 +970,7 @@ class AdminController extends Controller
         if($salary < 0)
         {
 
-            session()->flash('wrong','Negative Salary do no accepted !');
+            session()->flash('wrong','No se aceptan salarios negativos !');
             return back();
 
         }
@@ -1015,7 +980,7 @@ class AdminController extends Controller
         if($email > 0)
         {
 
-            session()->flash('wrong','Email already registered !');
+            session()->flash('wrong','Email ya registrado !');
             return back();
 
 
@@ -1027,7 +992,7 @@ class AdminController extends Controller
         if($phone > 0)
         {
 
-            session()->flash('wrong','Phone already registered !');
+            session()->flash('wrong','Teléfono ya registrado !');
             return back();
 
 
@@ -1035,7 +1000,7 @@ class AdminController extends Controller
         if(strlen($req->password)<8)
         {
 
-            session()->flash('wrong','Password lenght at least 8 words!');
+            session()->flash('wrong','La contraseña debe tener al menos 8 palabras!');
             return back();
         }
 
@@ -1043,7 +1008,7 @@ class AdminController extends Controller
         {
 
             
-            session()->flash('wrong','Password do not match !');
+            session()->flash('wrong','La contraseña no coincide !');
             return back();
 
 
@@ -1080,7 +1045,7 @@ class AdminController extends Controller
         \Mail::to($req->email)->send(new \App\Mail\UserAddedMail($details));
 
 
-        session()->flash('success','Delivery Boy added successfully !');
+        session()->flash('success','Repartidor agregado exitosamente!');
         return back();
 
 
@@ -1098,7 +1063,7 @@ class AdminController extends Controller
 
         $delete=DB::table('users')->where('id',$id)->delete();
 
-        session()->flash('success','Delivery Boy deleted successfully !');
+        session()->flash('success','Repartidor eliminado !');
         return back();
     }
 
@@ -1121,7 +1086,7 @@ class AdminController extends Controller
         if($req->salary < 0)
         {
 
-            session()->flash('wrong','Negative Salary do no accepted !');
+            session()->flash('wrong','No se aceptan salarios negativos !');
             return back();
 
 
@@ -1134,7 +1099,7 @@ class AdminController extends Controller
 
         if($email > 0)
         {
-            session()->flash('wrong','Email already registered !');
+            session()->flash('wrong','Email ya registrado!');
             return back();
 
         }
@@ -1145,7 +1110,7 @@ class AdminController extends Controller
         if($phone > 0)
         {
 
-            session()->flash('wrong','Phone already registered !');
+            session()->flash('wrong','Teléfono ya registrado !');
             return back();
         }
 
@@ -1210,14 +1175,14 @@ class AdminController extends Controller
             \Mail::to($req->email)->send(new \App\Mail\UserAddedMail($details));
     
     
-            session()->flash('success','Delivery Boy updated successfully !');
+            session()->flash('success','Repartidor actualizado con éxito !');
 
 
         }
         else
         {
 
-            session()->flash('wrong','Already same info exits !');
+            session()->flash('wrong','Ya sale la misma información !');
 
         }
 
@@ -1242,7 +1207,7 @@ class AdminController extends Controller
 
         $upload=DB::table('banners')->Insert($data);
 
-        session()->flash('success','Banner added successfully !');
+        session()->flash('success','Banner agregado !');
 
         return back();
 
@@ -1276,7 +1241,7 @@ class AdminController extends Controller
 
         $update=DB::table('banners')->where('id',$id)->Update($data);
 
-        session()->flash('success','Banner  updated successfully !');
+        session()->flash('success','Banner actualizado !');
 
         return back();
 
@@ -1287,7 +1252,7 @@ class AdminController extends Controller
 
         $delete=DB::table('banners')->where('id',$id)->delete();
 
-        session()->flash('success','Banner deleted successfully !');
+        session()->flash('success','Banner eliminado !');
 
         return back();
     }
@@ -1301,7 +1266,11 @@ class AdminController extends Controller
 
     public function add_coupon_process(Request $req)
     {
-
+        $this->validate(request(),[
+            'name'=> 'required',
+            'percentage'=> 'required',
+            'code'=> 'required',
+        ]);
 
         $data=array();
 
@@ -1311,32 +1280,27 @@ class AdminController extends Controller
         $data['code']=$req->code;
         $data['validate']=$req->vaildation_date;
 
-
-
         $percentage=$req->discount_percentage;
 
         if($percentage < 0)
         {
-            session()->flash('wrong','Negative percentage do not accepted !');
+            session()->flash('wrong','Porcentaje negativo no aceptado !');
             back();
-
         }
 
         $code=DB::table('coupons')->where('code',$req->code)->count();
 
         if($code > 0)
         {
-            session()->flash('wrong','Code already exits !');
+            session()->flash('wrong','Código ya existe !');
             return back();
-
         }
 
         $load=DB::table('coupons')->Insert($data);
 
-        session()->flash('success','Coupon added successfully !');
+        session()->flash('success','Cupón agregado !');
 
         return back();
-
     }
 
     public function delete_coupon($id)
@@ -1344,7 +1308,7 @@ class AdminController extends Controller
 
         $delete=DB::table('coupons')->where('id',$id)->delete();
 
-        session()->flash('success','Coupon deleted successfully !');
+        session()->flash('success','Cupón eliminado exitosamente !');
 
         return back();
     }
@@ -1377,7 +1341,7 @@ class AdminController extends Controller
         if($percentage < 0)
         {
 
-            session()->flash('wrong','Negative percentage do not accepted !');
+            session()->flash('wrong','Porcentaje negativo no aceptado !');
             return back();
 
 
@@ -1391,7 +1355,7 @@ class AdminController extends Controller
         if($code > 0)
         {
 
-            session()->flash('wrong','Code already exits !');
+            session()->flash('wrong','Código ya existe !');
             return back();
 
 
@@ -1405,7 +1369,7 @@ class AdminController extends Controller
 
 
 
-        session()->flash('success','Coupon updated successfully !');
+        session()->flash('success','Cupón actualizado exitosamente !');
 
         return back();
 
@@ -1427,13 +1391,13 @@ class AdminController extends Controller
 
         if($price < 0)
         {
-            session()->flash('wrong','Negative price do not accepted !');
+            session()->flash('wrong','No se aceptan precios negativos.!');
             return back();
         }
 
         $load=DB::table('charges')->Insert($data);
 
-        session()->flash('success','Charge added successfully !');
+        session()->flash('success','Cargo agregado exitosamente !');
 
         return back();
     }
@@ -1442,7 +1406,7 @@ class AdminController extends Controller
     {
         $delete=DB::table('charges')->where('id',$id)->delete();
 
-        session()->flash('success','Charge deleted successfully !');
+        session()->flash('success','Cargo eliminado exitosamente !');
 
         return back();
     }
@@ -1465,13 +1429,13 @@ class AdminController extends Controller
 
         if($price < 0)
         {
-            session()->flash('wrong','Negative price do not accepted !');
+            session()->flash('wrong','No se aceptan precios negativos. !');
             return back();
         }
 
         $load=DB::table('charges')->where('id',$id)->Update($data);
 
-        session()->flash('success','Charge updated successfully !');
+        session()->flash('success','Cargo actualizado exitosamente !');
 
         return back();
     }
@@ -1555,7 +1519,7 @@ class AdminController extends Controller
 
         $load=DB::table('about_us')->Update($data);
 
-        session()->flash('success','Customize updated successfully !');
+        session()->flash('success','Personalización actualizado con éxito !');
 
         return back();
 

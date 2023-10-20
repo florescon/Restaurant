@@ -32,7 +32,7 @@
         
               <div class="success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Congrats !</strong> {{Session::get('success')}}
+            <strong>Listo !</strong> {{Session::get('success')}}
           </div>
               <br>
               @endif
@@ -43,8 +43,8 @@
   <div class="card-body">
     <h5 class="card-title">Banner {{ $i }}</h5>
 
-    <a href="{{  asset('admin/banner/edit/'.$banner->id) }}" type="button" class="btn btn-primary">Edit</a>
-    <a href="{{  asset('admin/banner/delete/'.$banner->id) }}" type="button" class="btn btn-danger">Delete</a>
+    <a href="{{  asset('admin/banner/edit/'.$banner->id) }}" type="button" class="btn btn-primary">Editar</a>
+    <a href="{{  asset('admin/banner/delete/'.$banner->id) }}" type="button" class="btn btn-danger">Eliminar</a>
   </div>
 </div>
 @php 

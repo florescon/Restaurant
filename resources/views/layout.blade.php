@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/short.jpg') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/logo.png') }}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>Midway Dine - Your Favourite Foods</title>
+    <title>Restaurant - Tus Comidas Favoritas</title>
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css')}}">
@@ -54,17 +54,17 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="/">Home</a></li>
-                            <li class="scroll-to-section"><a href="/#about">About</a></li>
+                            <li class="scroll-to-section"><a href="/">Inicio</a></li>
+                            <li class="scroll-to-section"><a href="/#about">Acerca de</a></li>
                            	
-                            <li class="scroll-to-section"><a href="/#menu">Menu</a></li>
+                            <li class="scroll-to-section"><a href="/#menu">Menú</a></li>
                         
-                            <li class="scroll-to-section"><a href="/trace-my-order">Trace Order</a></li>
+                            <li class="scroll-to-section"><a href="/trace-my-order">Seguimiento</a></li>
 
-                            <li class="scroll-to-section"><a href="/my-order">My Order</a></li>
+                            <li class="scroll-to-section"><a href="/my-order">Mi Pedido</a></li>
                           
                             <li class="scroll-to-section"><a href="/#chefs">Chefs</a></li> 
-                            <li class="scroll-to-section"><a href="/#reservation">Contact Us</a></li>
+                            <li class="scroll-to-section"><a href="/#reservation">Contáctanos</a></li>
                             <li><a href="/cart"><i class="fa fa-shopping-cart"></i></a></li>
 
 
@@ -126,10 +126,10 @@
                                         </li>
                                     @else
                                       <li>
-                                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Iniciar Sesión</a>
                                       </li>
                                         @if (Route::has('register'))
-                                            <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a> </li>
+                                            <li><a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrar</a> </li>
                                         @endif
                                     @endauth
                                 </div>
@@ -168,8 +168,8 @@
                 </div>
                 <div class="col-lg-4 col-xs-12">
                     <div class="left-text-content">
-                        <p>© Copyright Midway Dine
-							<br>Since 2022</p>
+                        <p>© Copyright Restaurant
+							<br>Since 1999</p>
                     </div>
                 </div>
             </div>

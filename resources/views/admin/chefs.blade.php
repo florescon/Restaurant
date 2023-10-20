@@ -3,7 +3,7 @@
 @section('container')
 
 
-<a href="/add/chef" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Add Chef</a>
+<a href="/add/chef" type="button" class="btn btn-success" style="width:170px;height:35px;padding-top:9px;">+ Agregar Chef</a>
 
 
 <br>
@@ -25,7 +25,7 @@
          
               <div class="success">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-            <strong>Congrats !</strong> {{Session::get('success')}}
+            <strong>Listo !</strong> {{Session::get('success')}}
           </div>
               <br>
               @endif
@@ -52,7 +52,7 @@
     <img class="card-img-top" src="{{ asset('assets/images/'.$chef->image) }}" style="width:100%;height:auto;" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{ $chef->name }}</h5>
-      <p> Job Title : {{ $chef->job_title  }}</p>
+      <p> Nombre del Puesto : {{ $chef->job_title  }}</p>
      
       <p class="card-text" style="font-size:20px;">
      
@@ -63,8 +63,8 @@
                             </p>
     </div>
     <div class="card-footer">
-      <small class="text-muted"><a href="{{ asset('/chef/edit/'.$chef->id) }}" class="btn btn-primary">Edit</a>
-      <a href="{{ asset('/chef/delete/'.$chef->id) }}" class="btn btn-danger" style="margin-left:10px;">Delete</a>
+      <small class="text-muted"><a href="{{ asset('/chef/edit/'.$chef->id) }}" class="btn btn-primary">Editar</a>
+      <a href="{{ asset('/chef/delete/'.$chef->id) }}" class="btn btn-danger" style="margin-left:10px;">Eliminar</a>
 
 
 

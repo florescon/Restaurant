@@ -6,7 +6,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Coupon</h4>
+                    <h4 class="card-title">Agregar Cupón</h4>
                     <br>
 
                     @if(Session::has('wrong'))
@@ -21,7 +21,7 @@
                   
                         <div class="success">
                       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                      <strong>Congrats !</strong> {{Session::get('success')}}
+                      <strong>Listo !</strong> {{Session::get('success')}}
                     </div>
                         <br>
                         @endif
@@ -31,23 +31,23 @@
                        @csrf
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
+                        <label for="exampleInputName1">Nombre</label>
                         <input type="text" name="name" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Details</label>
+                        <label for="exampleInputName1">Detalles</label>
                         <input type="text" name="details" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Code</label>
+                        <label for="exampleInputName1">Código</label>
                         <input type="text" name="code" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Discount(Percentage)</label>
+                        <label for="exampleInputName1">Descuento(Porcentaje)</label>
                         <input type="text" name="discount_percentage" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Validation Date</label>
+                        <label for="exampleInputName1">Fecha de validación</label>
                         <input type="date" name="vaildation_date" class="form-control" id="exampleInputName1">
                       </div>
 
@@ -58,8 +58,8 @@
     
                   
                     
-                      <button type="submit" class="btn btn-primary me-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                      <button class="btn btn-dark">Cancelar</button>
                     </form>
                   </div>
                 </div>

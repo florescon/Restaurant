@@ -151,7 +151,7 @@ class BkashController extends Controller
 
             // THEN YOU CAN REDIRECT TO YOUR ROUTE
 
-            Session::flash('successMsg', 'Payment has been Completed Successfully');
+            Session::flash('successMsg', 'El pago se ha completado con éxito');
 
             return response()->json(['status' => true]);
         }

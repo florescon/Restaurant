@@ -6,7 +6,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Add Delivery Boy</h4>
+                    <h4 class="card-title">Agregar Repartidor</h4>
                     <br>
 
                     @if(Session::has('wrong'))
@@ -21,7 +21,7 @@
                   
                         <div class="success">
                       <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                      <strong>Congrats !</strong> {{Session::get('success')}}
+                      <strong>Listo !</strong> {{Session::get('success')}}
                     </div>
                         <br>
                         @endif
@@ -31,7 +31,7 @@
                        @csrf
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
+                        <label for="exampleInputName1">Nombre</label>
                         <input type="text" name="name" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
@@ -39,7 +39,7 @@
                         <input type="text" name="email" class="form-control" id="exampleInputName1">
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputName1">Phone</label>
+                        <label for="exampleInputName1">Teléfono</label>
                         <input type="number" name="phone" class="form-control" id="exampleInputName1">
                       </div>
 
@@ -47,31 +47,31 @@
 
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Salary</label>
+                        <label for="exampleInputName1">Salario</label>
                         <input type="number" name="salary" class="form-control" id="exampleInputName1">
                       </div>
 
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Password</label>
+                        <label for="exampleInputName1">Contraseña</label>
                         <input type="password" name="password" class="form-control" id="exampleInputName1">
                       </div>
 
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Confirm Password</label>
+                        <label for="exampleInputName1">Confirmar Contraseña</label>
                         <input type="password" name="confirm_password" class="form-control" id="exampleInputName1">
                       </div>
 
                   
                       <div class="form-group">
-                        <label for="exampleFormControlFile1">Image</label>
+                        <label for="exampleFormControlFile1">Imagen</label>
                         <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                       </div>
                   
                     
-                      <button type="submit" class="btn btn-primary me-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                      <button class="btn btn-dark">Cancelar</button>
                     </form>
                   </div>
                 </div>

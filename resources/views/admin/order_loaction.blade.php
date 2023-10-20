@@ -6,7 +6,7 @@
 <div class="col-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Order Location</h4>
+                    <h4 class="card-title">Ubicación del pedido</h4>
                     <br>
                     @if(Session::has('wrong'))
               
@@ -20,7 +20,7 @@
                  
                       <div class="success">
                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                    <strong>Congrats !</strong> {{Session::get('success')}}
+                    <strong>Listo !</strong> {{Session::get('success')}}
                   </div>
                       <br>
                       @endif
@@ -30,13 +30,13 @@
                        @csrf
 
                       <div class="form-group">
-                        <label for="exampleInputName1">Invoice</label>
+                        <label for="exampleInputName1">Folio</label>
                         <input type="text" name="id" class="form-control" id="exampleInputName1">
                       </div>
                   
                     
-                      <button type="submit" class="btn btn-primary me-2">Submit</button>
-                      <button class="btn btn-dark">Cancel</button>
+                      <button type="submit" class="btn btn-primary me-2">Enviar</button>
+                      <button class="btn btn-dark">Cancelar</button>
                     </form>
                   </div>
                 </div>

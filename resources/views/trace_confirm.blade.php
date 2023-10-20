@@ -9,7 +9,7 @@
 
     <center>
 @foreach($carts as $product)
-<h4>Trace order</h4>
+<h4>Seguimiento del Pedido</h4>
 
 <br>
 <br>
@@ -67,7 +67,7 @@
     
     @if($product->product_order=="yes")
 
-    <h6 style="padding-top:25px;color:Red;padding-bottom:10px;">Waiting for Approve</h6>
+    <h6 style="padding-top:25px;color:Red;padding-bottom:10px;">Esperando Aprobación</h6>
     <h1 style= "color:Gray;padding-top:10px !important;" class="border2"></h1>
 
 
@@ -86,7 +86,7 @@
     
     @if($product->product_order=="approve")
 
-    <h6 id="count_down" style="padding-top:25px;color:Red;padding-bottom:10px;">(Remaining : {{ $product->delivery_time }})</h6>
+    <h6 id="count_down" style="padding-top:25px;color:Red;padding-bottom:10px;">(Restante : {{ $product->delivery_time }})</h6>
     <h1 style= "color:Gray;padding-top:10px !important;" class="border2"></h1>
     <input type="text" id="previous_time" style="display:none" value="{{ $product->delivery_time }}">
 
@@ -142,7 +142,7 @@
 </center>
     <center>
 
-    <h4>Product Details</h4>
+    <h4>Detalles</h4>
     <br>
     <br>
 
@@ -152,9 +152,9 @@
 <table id="cart" class="table table-hover table-condensed container">
     <thead>
         <tr>
-            <th style="width:50%">Product</th>
-            <th style="text-align:center;width:10%">Price</th>
-            <th style="width:8%">Quantity</th>
+            <th style="width:50%">Producto</th>
+            <th style="text-align:center;width:10%">Precio</th>
+            <th style="width:8%">Cantidad</th>
             <th style="width:22%" class="text-center">Subtotal</th>
      
         </tr>
@@ -206,7 +206,7 @@
         Session::put('total',$total_price);
         
         @endphp
-            <td colspan="4" class="text-right"><h6><strong>Discount ${{ $discount_price }}</strong></h6></td>
+            <td colspan="4" class="text-right"><h6><strong>Descuento ${{ $discount_price }}</strong></h6></td>
         </tr>
         <tr>
         @php 
@@ -219,11 +219,11 @@
         Session::put('total',$total_price);
         
         @endphp
-            <td colspan="4" class="text-right"><h3><strong>Total (With Discount)${{ $total_price }}</h2></strong></h3></td>
+            <td colspan="4" class="text-right"><h3><strong>Total (Con Descuento)${{ $total_price }}</h2></strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/menu') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                <a href="{{ url('/menu') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continuar Comprando</a>
              
             </td>
         </tr>

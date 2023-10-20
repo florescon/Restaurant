@@ -1,7 +1,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
-    <title>Successful Payment</title>
+    <title>Pedido Confirmado</title>
 </head>
     <style>
       body {
@@ -42,9 +42,13 @@
       <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
         <i class="checkmark">✓</i>
       </div>
-        <h1>Success</h1> 
-        <h3>Invoice no - {{  $invoice }}</h3>
-        <p>We received your purchase request;<br/> we'll be in touch shortly!</p>
+        <h1>Confirmado</h1> 
+        <h3>Folio no - {{  $invoice }}</h3>
+        <p>Recibimos tu pedido!</p>
+
+        <br>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <a href="/">Ir a la sección del cliente</a></span>
+
       </div>
     </body>
 </html>
