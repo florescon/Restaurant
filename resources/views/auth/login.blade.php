@@ -47,7 +47,7 @@
                 </x-jet-button>
             </div><br>
             <div style="text-align:center">
-                Or, 
+                O, 
                 <u><a href="/register">Registrarse ahora</a></u>
             </div>
         </form>

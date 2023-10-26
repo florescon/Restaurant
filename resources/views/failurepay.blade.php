@@ -13,14 +13,14 @@
 		
 		<div class="contant_box_404">
 		<h3 class="h2" style="color:red;">
-		Oops! Something went wrong.
+		Oops! Algo ha salido mal.
 		</h3>
 		
-		<p style="color:green;">While trying to reserve money from your account
+		<p style="color:green;">Al intentar reservar dinero de su cuenta
 
         </p>
 		
-		<a href="/" class="link_404" style="text-decoration: none;">Try again</a>
+		<a href="/" class="link_404" style="text-decoration: none;">Intentar nuevamente</a>
 	</div>
 
 

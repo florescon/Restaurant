@@ -619,11 +619,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `salary`, `usertype`, `email_verified_at`, `password`, `two_factor_secret`, `two_factor_recovery_codes`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(3, 'Usuario', 'usuario@gmail.com', '01824072334', NULL, '0', NULL, '$2y$10$WrOxZtOB1ioyR7ZZXqjduOJuSebNBF.duldp9DTaYFTunmVWdcFnG', NULL, NULL, '0dAZOIaT06cAyULOuzKBXC61XSUyOMMGXy801LDMdot5VpeYzfwPU5o2lUcC', NULL, NULL, NULL, '2023-07-24 06:56:10'),
-(11, 'Administrador', 'admin@gmail.com', '1554649447', '90000', '1', NULL, '$2y$10$WrOxZtOB1ioyR7ZZXqjduOJuSebNBF.duldp9DTaYFTunmVWdcFnG', NULL, NULL, NULL, NULL, '1250259143.jpg', NULL, NULL),
-(14, 'Administrador ver', 'adminver@gmail.com', '01770277098', '35000', '3', NULL, '$2y$10$WrOxZtOB1ioyR7ZZXqjduOJuSebNBF.duldp9DTaYFTunmVWdcFnG', NULL, NULL, NULL, NULL, '2023444275.jpg', NULL, NULL),
-(18, 'Repartidor', 'repartidor@gmail.com', '01325040309', '14000', '2', NULL, '$2y$10$WrOxZtOB1ioyR7ZZXqjduOJuSebNBF.duldp9DTaYFTunmVWdcFnG', NULL, NULL, NULL, NULL, '1266291463.jpg', NULL, NULL),
-(19, 'Administrador-2', 'admin2@gmail.com', '1737336069', '250000', '1', NULL, '$2y$10$WrOxZtOB1ioyR7ZZXqjduOJuSebNBF.duldp9DTaYFTunmVWdcFnG', NULL, NULL, NULL, NULL, '900546987.png', NULL, NULL);
+(3, 'Usuario', 'usuario@gmail.com', '01824072334', NULL, '0', NULL, '$2y$10$v6iEKZ/Hc7Hlb0o6xX4QVOxlToqyjteX17dRASVJgF2FNWg0AuUkm', NULL, NULL, '0dAZOIaT06cAyULOuzKBXC61XSUyOMMGXy801LDMdot5VpeYzfwPU5o2lUcC', NULL, NULL, NULL, '2023-07-24 06:56:10'),
+(11, 'Administrador', 'admin@gmail.com', '1554649447', '90000', '1', NULL, '$2y$10$v6iEKZ/Hc7Hlb0o6xX4QVOxlToqyjteX17dRASVJgF2FNWg0AuUkm', NULL, NULL, NULL, NULL, '1250259143.jpg', NULL, NULL),
+(14, 'Administrador ver', 'adminver@gmail.com', '01770277098', '35000', '3', NULL, '$2y$10$v6iEKZ/Hc7Hlb0o6xX4QVOxlToqyjteX17dRASVJgF2FNWg0AuUkm', NULL, NULL, NULL, NULL, '2023444275.jpg', NULL, NULL),
+(18, 'Repartidor', 'repartidor@gmail.com', '01325040309', '14000', '2', NULL, '$2y$10$v6iEKZ/Hc7Hlb0o6xX4QVOxlToqyjteX17dRASVJgF2FNWg0AuUkm', NULL, NULL, NULL, NULL, '1266291463.jpg', NULL, NULL),
+(19, 'Administrador-2', 'admin2@gmail.com', '1737336069', '250000', '1', NULL, '$2y$10$v6iEKZ/Hc7Hlb0o6xX4QVOxlToqyjteX17dRASVJgF2FNWg0AuUkm', NULL, NULL, NULL, NULL, '900546987.png', NULL, NULL);
 
 --
 -- Indexes for dumped tables
